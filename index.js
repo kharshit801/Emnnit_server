@@ -22,7 +22,7 @@ const io = new Server(server, {
   }
 });
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 const upload = multer({ dest: 'uploads/' });
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));

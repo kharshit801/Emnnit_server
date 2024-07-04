@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const connectNotifications = mongoose.createConnection("mongodb+srv://auxin:auxin@cluster0.xrg7sez.mongodb.net/CollegeNotifications");
-const connectStudentDetails = mongoose.createConnection("mongodb+srv://auxin:auxin@cluster0.xrg7sez.mongodb.net/StudentDetails");
-const connectClassSchedules = mongoose.createConnection("mongodb+srv://auxin:auxin@cluster0.xrg7sez.mongodb.net/ClassSchedules");
+const connectNotifications = mongoose.createConnection(process.env.MONGODB_NOTIFICATION);
+const connectStudentDetails = mongoose.createConnection(process.env.MONGODB_STUDENT);
+const connectClassSchedules = mongoose.createConnection(process.env.MONGODB_CLASSSCHEDULE);
 
 const waitForConnection = (connection) => {
   return new Promise((resolve, reject) => {
